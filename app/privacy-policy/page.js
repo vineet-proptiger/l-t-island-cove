@@ -121,12 +121,12 @@ export default function PrivacyPolicy() {
             >
               At{" "}
               <a
-                href="https://srijantownsquarenewtown.in/"
+                // href="https://srijantownsquarenewtown.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "var(--color-teal-dark)", fontWeight: "600" }}
               >
-                srijantownsquarenewtown.in
+                ltislandcove
               </a>{" "}
               (Authorized Marketing Partner), we respect your privacy and are
               committed to safeguarding your personal data. This Privacy Policy

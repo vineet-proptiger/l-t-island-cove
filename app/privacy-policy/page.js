@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
             <img
               src={logoImages.tarc}
               alt="L&T Island Cove Mahim"
-              className="h-6 sm:h-10 w-auto object-contain"
+              className="h-12 sm:h-12 md:h-16 w-auto object-contain"
             />
           </Link>
           <Link

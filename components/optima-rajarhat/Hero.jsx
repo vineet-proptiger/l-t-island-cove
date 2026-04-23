@@ -22,10 +22,10 @@ export default function Hero({ setIsOpen }) {
   const goTo = (idx) => setCur(idx)
 
   const specs = [
-    { val: '47',        lbl: 'Acres\nTownship'     },
-    { val: '2,3,4 BHK', lbl: 'Config-\nuration'   },
-    { val: '25+',       lbl: 'World-Class\nAmenities' },
-    { val: '₹65L+',    lbl: 'Starting\nPrice'      },
+    { val: '11.3',     lbl: 'Acres\nTownship'   },
+    { val: '2 & 3 BHK', lbl: 'Config-\nuration' },
+    { val: '70%',      lbl: 'Open Green\nSpaces' },
+    { val: '₹65L+',   lbl: 'Starting\nPrice'    },
   ]
 
   return (
@@ -49,7 +49,7 @@ export default function Hero({ setIsOpen }) {
           }}>
             {slides.map((src, idx) => (
               <div key={idx} style={{ flex: '0 0 100%', height: '100%', position: 'relative' }}>
-                <Image src={src} alt={`L&T Island ${idx + 1}`} fill className="object-cover" priority={idx === 0} sizes="100vw" />
+                <Image src={src} alt={`Srijan Optima ${idx + 1}`} fill className="object-cover" priority={idx === 0} sizes="100vw" />
               </div>
             ))}
           </div>
@@ -72,10 +72,10 @@ export default function Hero({ setIsOpen }) {
           {/* Project title bottom-left */}
           <div style={{ position: 'absolute', bottom: '14px', left: '16px', zIndex: 5 }}>
             <p style={{ fontFamily: F_SANS, fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-teal)', margin: '0 0 4px' }}>
-              New Town, Rajarhat — Kolkata
+              Rajarhat Main Road, Kolkata
             </p>
             <h1 style={{ fontFamily: F_JOST, fontSize: 'clamp(24px, 7vw, 36px)', fontWeight: 800, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em', margin: 0 }}>
-              L&T <span style={{ color: 'var(--color-teal)' }}>Island</span>
+              Srijan <span style={{ color: 'var(--color-teal)' }}>Optima</span>
             </h1>
           </div>
 
@@ -110,7 +110,7 @@ export default function Hero({ setIsOpen }) {
         {/* Mobile — CTA */}
         <div style={{ background: '#0d1a24', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', textAlign: 'center', margin: 0 }}>
-            2, 3 &amp; 4 BHK Premium Residences
+            2 &amp; 3 BHK Affordable Residences
           </p>
           <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '26px', fontWeight: 700, color: 'var(--color-teal)', textAlign: 'center', lineHeight: 1, margin: 0 }}>
             ₹65 Lacs*
@@ -158,7 +158,7 @@ export default function Hero({ setIsOpen }) {
                   transform: cur === idx ? 'scale(1.06)' : 'scale(1)',
                   transition: 'transform 8s ease-out',
                 }}>
-                  <Image src={src} alt={`L&T Island ${idx + 1}`} fill className="object-cover" priority={idx === 0} sizes="100vw" />
+                  <Image src={src} alt={`Srijan Optima ${idx + 1}`} fill className="object-cover" priority={idx === 0} sizes="100vw" />
                 </div>
               </div>
             ))}
@@ -197,7 +197,7 @@ export default function Hero({ setIsOpen }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
               <span style={{ display: 'block', width: '28px', height: '1px', background: 'var(--color-teal)', opacity: 0.8 }} />
               <span style={{ fontFamily: F_SANS, fontSize: '10px', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--color-teal)' }}>
-                New Town, Rajarhat — Kolkata
+                Largest Township in Rajarhat Main Road
               </span>
             </div>
             <h1 style={{
@@ -205,7 +205,7 @@ export default function Hero({ setIsOpen }) {
               fontSize: 'clamp(28px, 3.4vw, 52px)',
               fontWeight: 800, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.02em',
             }}>
-              L&T <span style={{ color: 'var(--color-teal)' }}>Island</span>
+              Srijan <span style={{ color: 'var(--color-teal)' }}>Optima</span>
             </h1>
           </div>
 
@@ -240,10 +240,10 @@ export default function Hero({ setIsOpen }) {
           }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               {[
-                'Landmark Integrated Township',
-                'Premium 2, 3 & 4 BHK Homes',
-                '25+ World-Class Amenities',
-                'Spread across 47 Acres',
+                'Elevated Living in Rajarhat',
+                'Modern 2 & 3 BHK Residences',
+                '70% Open Green Spaces',
+                'Spread across 11.3 Acres',
               ].map((line, i) => (
                 <p key={i} style={{ fontFamily: F_SANS, fontSize: '12px', lineHeight: 1.6, color: 'rgba(255,255,255,0.65)', fontWeight: 400, margin: 0, textAlign: 'center' }}>
                   {line}
@@ -302,8 +302,8 @@ export default function Hero({ setIsOpen }) {
             </p>
             {[
               'Close to New Town IT Hub',
-              'Airport 20 Min Away',
-              'Metro Station 3 Min',
+              'Excellent Airport Connectivity',
+              'Upcoming Infrastructure Boost',
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--color-teal)', flexShrink: 0, opacity: 0.8 }} />
@@ -320,7 +320,7 @@ export default function Hero({ setIsOpen }) {
           }}>
             <div style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: F_SANS, fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.06em', marginBottom: '4px' }}>
-                2, 3 &amp; 4 BHK Starting From
+                2 &amp; 3 BHK Affordable Flats From
               </p>
               <p className="blink-price" style={{ fontFamily: F_JOST, fontSize: '30px', fontWeight: 700, color: 'var(--color-teal)', lineHeight: 1, margin: 0 }}>
                 ₹65 Lacs*

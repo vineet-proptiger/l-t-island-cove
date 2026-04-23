@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { logoImages } from "../../../lib/images";
+import { logoImages } from "../../../lib/optima-rajarhat/images";
 import AosInit from "../../../components/AosInit";
 
 const GOLD = "var(--color-teal)";
@@ -34,9 +34,12 @@ export default function PrivacyPolicy() {
 
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-[80px]">
           <Link href="/optima-rajarhat" className="flex items-center">
-            <h2 style={{ fontFamily: 'var(--font-jost)', fontWeight: '800', fontSize: '20px', color: 'var(--color-primary)', margin: 0 }}>
-              SRIJAN <span style={{ color: 'var(--color-teal)' }}>OPTIMA</span>
-            </h2>
+            <img
+              src={logoImages.tarc}
+              alt="Srijan Optima"
+              className="h-10 md:h-16 w-auto object-contain"
+              style={{ maxWidth: '250px' }}
+            />
           </Link>
           <Link
             href="/optima-rajarhat"

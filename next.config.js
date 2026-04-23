@@ -7,8 +7,12 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/the-terraces',
+        source: '/lnt-island-cove-mahim',
         destination: '/',
+      },
+      {
+        source: '/lnt-island-cove-mahim/privacy-policy',
+        destination: '/privacy-policy',
       },
     ]
   },

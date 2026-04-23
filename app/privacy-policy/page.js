@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
         ></div>
 
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-[80px]">
-          <Link href="/" className="flex items-center">
+          <Link href="/lnt-island-cove-mahim" className="flex items-center">
             <img
               src={logoImages.tarc}
               alt="L&T Island Cove Mahim"
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
             />
           </Link>
           <Link
-            href="/"
+            href="/lnt-island-cove-mahim"
             className="btn-teal shadow-lg !text-[11px] !px-3 !py-2 sm:!text-sm sm:!px-6 sm:!py-3"
           >
             <span className="hidden sm:inline">BACK TO HOME</span>

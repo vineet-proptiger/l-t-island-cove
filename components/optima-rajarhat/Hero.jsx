@@ -107,6 +107,23 @@ export default function Hero({ setIsOpen }) {
           ))}
         </div>
 
+        {/* Mobile — Location Advantages */}
+        <div style={{ background: '#fff', padding: '14px 16px', borderTop: '1px solid rgba(13,26,36,0.08)' }}>
+          <p style={{ fontFamily: F_JOST, fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-teal-dark)', marginBottom: '8px', letterSpacing: '0.08em' }}>
+            Location Advantages
+          </p>
+          {[
+            'Close to New Town IT Hub',
+            'Excellent Airport Connectivity',
+            'Upcoming Infrastructure Boost',
+          ].map((item, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+              <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--color-teal)', flexShrink: 0 }} />
+              <span style={{ fontFamily: F_SANS, fontSize: '13px', fontWeight: 500, color: '#374151' }}>{item}</span>
+            </div>
+          ))}
+        </div>
+
         {/* Mobile — CTA */}
         <div style={{ background: '#0d1a24', padding: '14px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <p style={{ fontFamily: F_JOST, fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.55)', textAlign: 'center', margin: 0 }}>

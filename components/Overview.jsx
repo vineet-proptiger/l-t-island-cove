@@ -63,7 +63,7 @@ const EarlyForm = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (form.phone.length < 10) {
+    if (form.phone.replace(/\D/g, '').length < 10) {
       setError("Enter valid 10-digit number");
       return;
     }

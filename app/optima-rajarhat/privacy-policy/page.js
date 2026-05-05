@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { logoImages } from "../../../lib/optima-rajarhat/images";
-import AosInit from "../../../components/AosInit";
+import AosInit from "../../../components/optima-rajarhat/AosInit";
 
 const GOLD = "var(--color-teal)";
 const GOLD_DARK = "var(--color-teal-dark)";

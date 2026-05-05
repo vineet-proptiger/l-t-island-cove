@@ -1,0 +1,42 @@
+/* ═══════════════════════════════════════════════════════════════
+   THEME — Shriram Codename Pudhiya  (Red #EB2027)
+   Overrides :root CSS variables set in globals.css
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --color-teal:         #EB2027;
+  --color-teal-light:   #FF4C52;
+  --color-teal-dark:    #C41820;
+  --color-teal-bg:      #FEF2F2;
+
+  --color-gold:         #EB2027;
+  --color-gold-light:   #FF4C52;
+  --color-gold-dark:    #C41820;
+  --color-gold-bg:      #FEF2F2;
+
+  --color-shadow-inner: rgba(235, 32, 39, 0.12);
+  --color-shadow-card:  rgba(0, 0, 0, 0.07);
+
+  --color-primary:      #1a1a1a;
+  --color-primary-light:#333333;
+  --color-primary-dark: #111111;
+
+  --color-dark:         #1a1a1a;
+  --color-dark-mid:     #2d2d2d;
+
+  --color-bg:           #ffffff;
+  --color-bg-light:     #ffffff;
+  --color-bg-muted:     #f9f9f9;
+
+  --color-text:         #2d2d2d;
+  --color-text-mid:     #555555;
+  --color-text-light:   #9ca3af;
+
+  --btn-radius:         4px;
+  --btn-radius-pill:    4px;
+
+  --shadow-sm:  0 2px 8px  rgba(235, 32, 39, 0.08);
+  --shadow-md:  0 8px 24px rgba(235, 32, 39, 0.14);
+  --shadow-lg:  0 20px 48px rgba(235, 32, 39, 0.18);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.07);
+}

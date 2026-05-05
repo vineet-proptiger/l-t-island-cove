@@ -5,7 +5,15 @@
 // ═══════════════════════════════════════════════════════════════
 
 /* ─── CONFIG ─────────────────────────────────────────────────── */
-import { SHEET_WEBHOOK, PROPTIGER_URL, CITY_ID, CITY_SLUG } from '../../../lib/config'
+import * as lnt     from '../../../lib/lnt-island-cove-mahim/config'
+import * as optima  from '../../../lib/optima-rajarhat/config'
+import * as shriram from '../../../lib/shriram-codename-pudhiya/config'
+
+const PROJECTS = {
+  [lnt.PROJECT_ID]:     lnt,
+  [optima.PROJECT_ID]:  optima,
+  [shriram.PROJECT_ID]: shriram,
+}
 /* ────────────────────────────────────────────────────────────── */
 
 function clean(v) {
@@ -76,6 +84,13 @@ export async function POST(request) {
 
     const comments = get('comments')
 
+    /* ── Project config (lookup from registry) ── */
+    const projectConfig  = PROJECTS[projectId] || {}
+    const cityId         = projectConfig.CITY_ID       || ''
+    const citySlug       = projectConfig.CITY_SLUG      || ''
+    const sheetWebhook   = projectConfig.SHEET_WEBHOOK  || ''
+    const PROPTIGER_URL  = projectConfig.PROPTIGER_URL  || ''
+
     /* ── 1. Google Sheet ── */
     const sheetPayload = new URLSearchParams({
       secret: get('secret'),
@@ -111,7 +126,7 @@ export async function POST(request) {
       sheet_name: get('sheet_name'),
     })
 
-    fetch(SHEET_WEBHOOK, {
+    fetch(sheetWebhook, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: sheetPayload.toString(),
@@ -132,8 +147,8 @@ export async function POST(request) {
       projectId,
       projectName,
 
-      cityId: CITY_ID,
-      cityName: CITY_SLUG,
+      cityId: cityId,
+      cityName: citySlug,
 
       gaMedium: utmMedium,
       campaign: utmCampaign,

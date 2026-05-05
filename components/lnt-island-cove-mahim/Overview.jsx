@@ -8,9 +8,9 @@ import {
   SHEET_NAME,
   SECRET_KEY,
   CITY_DISPLAY,
-} from "../lib/config";
-import { getGeo, buildTrackingFields } from "../lib/formMeta";
-import { overviewImage } from "../lib/images";
+} from "../../lib/lnt-island-cove-mahim/config";
+import { getGeo, buildTrackingFields } from "../../lib/formMeta";
+import { overviewImage } from "../../lib/lnt-island-cove-mahim/images";
 
 const GOLD = "var(--color-teal)";
 const GOLD_DARK = "var(--color-teal-dark)";

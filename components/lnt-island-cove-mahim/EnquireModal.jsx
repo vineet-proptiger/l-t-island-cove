@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 import LeadForm from "./LeadForm";
-import { popupImage } from "../lib/images";
+import { popupImage } from "../../lib/lnt-island-cove-mahim/images";
 
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";
 const F_JOST = "var(--font-jost), Montserrat, sans-serif";

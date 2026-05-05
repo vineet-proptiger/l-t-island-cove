@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { logoImages } from "../../lib/images";
-import AosInit from "../../components/AosInit";
+import { logoImages } from "../../../lib/lnt-island-cove-mahim/images";
+import AosInit from "../../../components/lnt-island-cove-mahim/AosInit";
 
 const GOLD = "var(--color-teal)";
 const GOLD_DARK = "var(--color-teal-dark)";

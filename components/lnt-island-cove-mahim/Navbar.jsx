@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import { logoImages } from '../lib/images'
+import { logoImages } from '../../lib/lnt-island-cove-mahim/images'
 
 const GOLD = 'var(--color-teal)'
 

@@ -1,44 +1,33 @@
-/* ═══════════════════════════════════════════════════════════════
-   THEME — Shriram Codename Pudhiya  (Red #EB2027)
-   Overrides :root CSS variables set in globals.css
-   ═══════════════════════════════════════════════════════════════ */
-
 :root {
-  --color-teal:         #EB2027;
-  --color-teal-light:   #FF4C52;
-  --color-teal-dark:    #C41820;
-  --color-teal-bg:      #FEF2F2;
+  --color-teal: #4A8C98;
+  --color-teal-light: #67A9B6;
+  --color-teal-dark: #346A74;
+  --color-teal-bg: #F0F6F7;
+  --color-gold: #4A8C98;
 
-  --color-gold:         #EB2027;
-  --color-gold-light:   #FF4C52;
-  --color-gold-dark:    #C41820;
-  --color-gold-bg:      #FEF2F2;
+  --color-primary: #6D6E70;
+  --color-primary-light: #8A8B8D;
+  --color-primary-dark: #555658;
 
-  --color-shadow-inner: rgba(235, 32, 39, 0.12);
-  --color-shadow-card:  rgba(0, 0, 0, 0.07);
+  --color-dark: #3A3B3C;
+  --color-dark-mid: #4A4B4D;
 
-  --color-primary:      #1a1a1a;
-  --color-primary-light:#333333;
-  --color-primary-dark: #111111;
+  --color-bg: #ffffff;
+  --color-bg-light: #ffffff;
+  --color-bg-muted: #f7f7f7;
 
-  --color-dark:         #1a1a1a;
-  --color-dark-mid:     #2d2d2d;
+  --color-text: #3A3B3C;
+  --color-text-mid: #6D6E70;
+  --color-text-light: #9A9B9D;
 
-  --color-bg:           #ffffff;
-  --color-bg-light:     #ffffff;
-  --color-bg-muted:     #f9f9f9;
+  --btn-radius: 6px;
+  --btn-radius-pill: 50px;
 
-  --color-text:         #2d2d2d;
-  --color-text-mid:     #555555;
-  --color-text-light:   #9ca3af;
-
-  --btn-radius:         4px;
-  --btn-radius-pill:    4px;
-
-  --shadow-sm:  0 2px 8px  rgba(235, 32, 39, 0.08);
-  --shadow-md:  0 8px 24px rgba(235, 32, 39, 0.14);
-  --shadow-lg:  0 20px 48px rgba(235, 32, 39, 0.18);
+  --shadow-sm: 0 2px 8px rgba(74, 140, 152, 0.08);
+  --shadow-md: 0 8px 24px rgba(74, 140, 152, 0.14);
+  --shadow-lg: 0 20px 48px rgba(74, 140, 152, 0.18);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.07);
+  --color-shadow-inner: rgba(74, 140, 152, 0.10);
 }
 
 @import 'aos/dist/aos.css';
@@ -506,6 +495,7 @@
   .highlight-card:hover .icon-wrap {
     border-color: var(--color-teal);
     background: var(--color-teal-bg);
+    color: var(--color-teal);
     box-shadow: 0 0 0 6px rgba(74, 140, 152, 0.08);
   }
 

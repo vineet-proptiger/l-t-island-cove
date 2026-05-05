@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { heroImages } from "../lib/images";
+import { heroImages } from "../../lib/lnt-island-cove-mahim/images";
 
 const GOLD = "var(--color-teal)";
 const F_SANS = "var(--font-sans), Open Sans, sans-serif";

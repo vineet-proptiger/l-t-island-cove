@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { logoImages } from "../../../lib/shriram-images";
+import { logoImages } from "../../../lib/shriram-codename-pudhiya/images";
 import AosInit from "../../../components/shriram-codename-pudhiya/AosInit";
 
 const GOLD = "var(--color-teal)";

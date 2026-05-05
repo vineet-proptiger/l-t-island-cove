@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import LeadForm from './LeadForm'
-import { popupImage } from '../../lib/shriram-images'
+import { popupImage } from '../../lib/shriram-codename-pudhiya/images'
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'

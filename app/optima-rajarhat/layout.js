@@ -1,3 +1,5 @@
+import './optima-theme.css'
+
 export const metadata = {
   title: 'Srijan Optima Rajarhat | Affordable 2 & 3 BHK Flats — Price Starting ₹65 Lacs*',
   description:

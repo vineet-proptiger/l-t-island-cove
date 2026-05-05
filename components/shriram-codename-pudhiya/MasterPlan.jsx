@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import { masterplanImages } from '../../lib/shriram-images'
+import { masterplanImages } from '../../lib/shriram-codename-pudhiya/images'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'

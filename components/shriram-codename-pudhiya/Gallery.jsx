@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { galleryImages } from '../../lib/shriram-images'
+import { galleryImages } from '../../lib/shriram-codename-pudhiya/images'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const RED = '#EB2027'

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../lib/config'
-import { getGeo, buildTrackingFields } from '../lib/formMeta'
+import { PROJECT_ID, PROJECT_NAME, API_ENDPOINT, SHEET_NAME, SECRET_KEY, CITY_DISPLAY } from '../../lib/lnt-island-cove-mahim/config'
+import { getGeo, buildTrackingFields } from '../../lib/formMeta'
 
 const GOLD = 'var(--color-teal)'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'

@@ -107,7 +107,7 @@ const ContactForm = () => {
       </label>
 
       <button type="submit" disabled={loading}
-        className="btn-gold w-full"
+        className="btn-teal w-full"
         style={{ padding: '14px', marginTop: '4px' }}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
@@ -215,7 +215,7 @@ const AboutDeveloper = ({ setIsOpen }) => (
             </div>
 
             <button onClick={() => setIsOpen(true)}
-              className="btn-gold"
+              className="btn-teal"
               style={{ padding: '11px 28px', fontSize: '13px', width: '100%' }}>
               Know More
             </button>

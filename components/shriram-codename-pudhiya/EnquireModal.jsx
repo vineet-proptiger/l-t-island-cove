@@ -106,7 +106,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
               </button>
             </div>
 
-            <LeadForm formName="Popup Modal" btnText="Download Brochure" btnClass="btn-gold-outline" />
+            <LeadForm formName="Popup Modal" btnText="Download Brochure" btnClass="btn-teal" />
           </div>
         </div>
       </div>

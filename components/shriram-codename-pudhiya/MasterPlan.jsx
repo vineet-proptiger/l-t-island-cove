@@ -79,7 +79,7 @@ const MasterPlan = ({ setIsOpen }) => {
                   }}>
                     <button
                       onClick={() => setIsOpen(true)}
-                      className="btn-gold-outline"
+                      className="btn-teal-outline"
                       style={{
                         background: 'rgba(255,255,255,0.92)',
                         backdropFilter: 'blur(4px)',

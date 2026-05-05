@@ -110,7 +110,7 @@ const Navbar = ({ setIsOpen }) => {
           {/* Enquire Now button — Desktop */}
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden lg:flex btn-gold-outline"
+            className="hidden lg:flex btn-teal-outline"
             style={{ fontSize: '13px', padding: '8px 22px' }}
           >
             Enquire Now
@@ -156,7 +156,7 @@ const Navbar = ({ setIsOpen }) => {
           <div className="p-4">
             <button
               onClick={() => { setIsOpen(true); setMobileOpen(false) }}
-              className="w-full btn-gold"
+              className="w-full btn-teal"
               style={{ justifyContent: 'center' }}
             >
               Enquire Now

@@ -135,7 +135,7 @@ const Gallery = ({ setIsOpen }) => {
 
         {/* CTA */}
         <div style={{ marginTop: '28px' }}>
-          <button onClick={() => setIsOpen(true)} className="btn-gold-outline" style={{ padding: '10px 28px' }}>
+          <button onClick={() => setIsOpen(true)} className="btn-teal-outline" style={{ padding: '10px 28px' }}>
             Enquire Now
           </button>
         </div>

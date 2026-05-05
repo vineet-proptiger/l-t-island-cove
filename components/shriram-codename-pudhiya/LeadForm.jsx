@@ -7,7 +7,7 @@ const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const inputClass = 'form-input mb-3'
 
-const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass = 'btn-gold' }) => {
+const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass = 'btn-teal' }) => {
   const [formData, setFormData]     = useState({ fullname: '', email: '', phone: '' })
   const [loading, setLoading]       = useState(false)
   const [success, setSuccess]       = useState(false)

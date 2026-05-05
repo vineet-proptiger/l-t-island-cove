@@ -37,7 +37,7 @@ const Overview = ({ setIsOpen }) => {
         <div data-aos="fade-up" data-aos-delay="120">
           <button
             onClick={() => setIsOpen(true)}
-            className="btn-gold-outline"
+            className="btn-teal-outline"
             style={{ padding: '10px 28px' }}
           >
             Enquire Now

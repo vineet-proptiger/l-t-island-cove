@@ -154,7 +154,7 @@ const Highlights = ({ setIsOpen }) => (
 
       {/* CTA */}
       <div style={{ textAlign: 'center', marginTop: '36px' }} data-aos="fade-up">
-        <button onClick={() => setIsOpen(true)} className="btn-gold"
+        <button onClick={() => setIsOpen(true)} className="btn-teal"
           style={{ padding: '13px 44px', letterSpacing: '0.08em' }}>
           Enquire Now
         </button>

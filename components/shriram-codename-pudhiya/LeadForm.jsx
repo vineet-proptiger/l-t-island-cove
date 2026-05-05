@@ -114,27 +114,15 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass
         style={{ fontFamily: F_SANS }}
       />
 
-      {/* Phone with +91 prefix */}
-      <div style={{ position: 'relative', marginBottom: '12px' }}>
-        <div style={{
-          position: 'absolute', left: 0, top: 0, bottom: 0,
-          display: 'flex', alignItems: 'center',
-          padding: '0 10px 0 14px',
-          borderRight: '1px solid #e5e7eb',
-          fontFamily: F_SANS, fontSize: '14px', color: '#374151', fontWeight: '500',
-          pointerEvents: 'none',
-        }}>
-          +91
-        </div>
-        <input
-          type="tel" name="phone" required
-          placeholder="Phone"
-          maxLength={10}
-          value={formData.phone} onChange={handleChange}
-          className="form-input"
-          style={{ fontFamily: F_SANS, paddingLeft: '56px' }}
-        />
-      </div>
+      {/* Phone */}
+      <input
+        type="tel" name="phone" required
+        placeholder="10-digit mobile number"
+        maxLength={10}
+        value={formData.phone} onChange={handleChange}
+        className={inputClass}
+        style={{ fontFamily: F_SANS }}
+      />
 
       {error && (
         <p style={{ color: '#EB2027', fontSize: '12px', fontFamily: F_SANS, margin: '-4px 0 10px' }}>

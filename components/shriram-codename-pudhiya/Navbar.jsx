@@ -110,7 +110,7 @@ const Navbar = ({ setIsOpen }) => {
           {/* Enquire Now button — Desktop */}
           <button
             onClick={() => setIsOpen(true)}
-            className="hidden lg:flex btn-teal-outline"
+            className="!hidden lg:!flex btn-teal-outline"
             style={{ fontSize: '13px', padding: '8px 22px' }}
           >
             Enquire Now

@@ -5,16 +5,7 @@ const nextConfig = {
     return config
   },
   async rewrites() {
-    return [
-      {
-        source: '/lnt-island-cove-mahim',
-        destination: '/',
-      },
-      {
-        source: '/lnt-island-cove-mahim/privacy-policy',
-        destination: '/privacy-policy',
-      },
-    ]
+    return []
   },
 }
 module.exports = nextConfig

@@ -84,7 +84,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details' }) => {
         <input type="checkbox" id="privacy-lead" required defaultChecked className="mt-0.5 shrink-0" style={{ accentColor: GOLD }} />
         <label htmlFor="privacy-lead" className="text-xs text-gray-500 leading-relaxed cursor-pointer" style={{ fontFamily: F_SANS }}>
           I agree to receive updates as per the{' '}
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: 'underline' }}>Privacy Policy</a>
+          <a href="/optima-rajarhat/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: 'underline' }}>Privacy Policy</a>
         </label>
       </div>
 

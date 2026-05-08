@@ -143,7 +143,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass
           lineHeight: 1.6, cursor: 'pointer',
         }}>
           I agree to receive updates as per the{' '}
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#EB2027', textDecoration: 'underline' }}>Privacy Policy</a>
+          <a href="/shriram-codename-pudhiya/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#EB2027', textDecoration: 'underline' }}>Privacy Policy</a>
         </label>
       </div>
 

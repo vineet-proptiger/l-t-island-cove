@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
             style={{ fontFamily: "var(--font-sans)" }}
           >
             <Link
-              href="/"
+              href="/lnt-island-cove-mahim"
               className="hover:text-white transition-colors"
               style={{ color: "var(--color-teal)" }}
             >
@@ -635,7 +635,7 @@ export default function PrivacyPolicy() {
         >
           &copy; 2026 L&T Island Cove Mahim. All rights reserved |{" "}
           <Link
-            href="/"
+            href="/lnt-island-cove-mahim"
             style={{ color: "var(--color-teal)", textDecoration: "none" }}
           >
             Back to Home

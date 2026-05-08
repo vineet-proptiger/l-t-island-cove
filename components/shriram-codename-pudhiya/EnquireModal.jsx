@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import LeadForm from './LeadForm'
-import { popupImage } from '../../lib/shriram-codename-pudhiya/images'
+// import { popupImage } from '../../lib/shriram-codename-pudhiya/images'
 
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
@@ -40,8 +40,8 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
       <div
         className="relative bg-white w-full rounded-xl overflow-hidden shadow-2xl flex flex-col sm:flex-row"
         style={{
-          maxWidth: '860px',
-          width: '95vw',
+          maxWidth: '400px',
+          width: '92vw',
           maxHeight: '95vh',
           animation: 'slideInRight 0.4s cubic-bezier(0.22,1,0.36,1) forwards',
         }}
@@ -49,7 +49,7 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
       >
 
         {/* LEFT — Image */}
-        <div className="hidden sm:block sm:w-[50%] shrink-0 relative" style={{ minHeight: '100%' }}>
+        {/* <div className="hidden sm:block sm:w-[50%] shrink-0 relative" style={{ minHeight: '100%' }}>
           <Image
             src={popupImage}
             alt="Shriram Codename Pudhiya"
@@ -61,13 +61,13 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
             position: 'absolute', inset: 0,
             background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 60%)',
           }} />
-        </div>
+        </div> */}
 
         {/* RIGHT — Form */}
         <div className="flex-1 flex flex-col overflow-y-auto">
 
           {/* Mobile image strip */}
-          <div className="sm:hidden w-full h-44 relative shrink-0">
+          {/* <div className="sm:hidden w-full h-44 relative shrink-0">
             <Image
               src={popupImage}
               alt="Shriram Codename Pudhiya"
@@ -80,10 +80,10 @@ const EnquireModal = ({ isOpen, setIsOpen }) => {
               position: 'absolute', inset: 0,
               background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%)',
             }} />
-          </div>
+          </div> */}
 
           {/* Form area */}
-          <div style={{ padding: '28px 28px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ padding: '40px 20px 20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
 
             {/* Title row */}
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '20px' }}>

@@ -127,7 +127,7 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass
         type="submit"
         disabled={loading}
         className={btnClass}
-        style={{ width: '100%', padding: '13px', fontSize: '13px', marginBottom: '14px' }}
+        style={{ width: '80%', padding: '13px', fontSize: '13px', marginBottom: '14px', marginLeft: 'auto', marginRight: 'auto', display: 'flex' }}
       >
         {loading ? 'Submitting...' : btnText}
       </button>
@@ -142,7 +142,8 @@ const LeadForm = ({ formName = 'Hero Form', btnText = 'Submit Details', btnClass
           fontSize: '11px', color: '#6b7280', fontFamily: F_SANS,
           lineHeight: 1.6, cursor: 'pointer',
         }}>
-          I authorize company representatives to Call, SMS, Email or WhatsApp me about its products and offers. This consent overrides any registration for DNC/NDNC.
+          I agree to receive updates as per the{' '}
+          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#EB2027', textDecoration: 'underline' }}>Privacy Policy</a>
         </label>
       </div>
 

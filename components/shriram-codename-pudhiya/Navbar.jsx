@@ -6,31 +6,31 @@ import { logoImages } from '../../lib/shriram-codename-pudhiya/images'
 const RED = '#EB2027'
 
 const navLinks = [
-  { name: 'Home',       href: '#' },
-  { name: 'Overview',   href: '#overview' },
-  { name: 'Gallery',    href: '#gallery' },
+  { name: 'Home', href: '#' },
+  { name: 'Overview', href: '#overview' },
+  { name: 'Gallery', href: '#gallery' },
   { name: 'Floor Plan', href: '#masterplan' },
-  { name: 'Price',      href: '#pricing' },
-  { name: 'Amenities',  href: '#amenities' },
-  { name: 'Location',   href: '#location' },
+  { name: 'Price', href: '#pricing' },
+  { name: 'Amenities', href: '#amenities' },
+  { name: 'Location', href: '#location' },
 ]
 
 const Navbar = ({ setIsOpen }) => {
-  const [mobileOpen, setMobileOpen]   = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('Home')
-  const [scrolled, setScrolled]       = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10)
 
       const sectionMap = [
-        { id: 'location',   name: 'Location' },
-        { id: 'amenities',  name: 'Amenities' },
-        { id: 'pricing',    name: 'Price' },
+        { id: 'location', name: 'Location' },
+        { id: 'amenities', name: 'Amenities' },
+        { id: 'pricing', name: 'Price' },
         { id: 'masterplan', name: 'Floor Plan' },
-        { id: 'gallery',    name: 'Gallery' },
-        { id: 'overview',   name: 'Overview' },
+        { id: 'gallery', name: 'Gallery' },
+        { id: 'overview', name: 'Overview' },
       ]
 
       for (const s of sectionMap) {

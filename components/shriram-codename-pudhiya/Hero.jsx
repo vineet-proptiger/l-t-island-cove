@@ -18,7 +18,7 @@ export default function Hero({ setIsOpen }) {
     <div style={{ marginTop: '68px', position: 'relative', width: '100%' }}>
 
       {/* ── Full-width hero image ── */}
-      <div className="relative w-full h-[calc(100vh-68px)] min-h-[520px]">
+      <div className="relative w-full h-[300px] md:h-[calc(100vh-68px)] md:min-h-[520px]">
 
         {/* Desktop Image */}
         <div className="hidden md:block absolute inset-0">
@@ -47,18 +47,18 @@ export default function Hero({ setIsOpen }) {
             alt="Shriram Codename Pudhiya"
             fill
             priority
-            className="object-cover"
+            className="object-cover object-[center_30%]"
             sizes="100vw"
           />
            <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)',
+            background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.8) 100%)',
           }} />
         </div>
 
         {/* ── Text content overlay ── */}
         <div className="absolute bottom-0 left-0 right-0 z-[2] p-0">
           {/* Main text block */}
-          <div className="container mx-auto px-4 md:px-10 pb-[20px] md:pb-[28px]">
+          <div className="container mx-auto px-4 md:px-10 pb-[60px] md:pb-[28px]">
 
             {/* Project name */}
             <h1 className="text-[clamp(26px,3.5vw,50px)] font-extrabold text-white mb-[6px] leading-[1.1] tracking-[-0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" style={{

@@ -128,7 +128,7 @@ export default function Hero({ setIsOpen }) {
       <div className="flex md:hidden flex-col gap-[8px] px-4 py-4" style={{ backgroundColor: RED }}>
         {highlights.map((item, i) => (
           <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
-            <span style={{ fontFamily: F_SANS, fontSize: '13px', fontWeight: '400', color: '#fff' }}>
+            <span style={{ fontFamily: F_SANS, fontSize: '14px', fontWeight: '400', color: '#fff' }}>
               <span style={{ fontWeight: '700', marginRight: '4px' }}>&raquo;</span>
               {item}
             </span>

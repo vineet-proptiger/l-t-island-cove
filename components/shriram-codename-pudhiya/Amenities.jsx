@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { amenityImages } from '../../lib/shriram-codename-pudhiya/images'
+import Lightbox from './Lightbox'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
@@ -11,6 +12,7 @@ const Amenities = ({ setIsOpen }) => {
   const [pos, setPos]       = useState(0)
   const [sliding, setSliding] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -94,6 +96,7 @@ const Amenities = ({ setIsOpen }) => {
               {amenityImages.map((item, idx) => (
                 <div
                   key={idx}
+                  onClick={() => setLightboxIndex(idx)}
                   style={{
                     flexShrink: 0,
                     width: `calc((100% - ${(visible - 1) * 12}px) / ${visible})`,
@@ -101,6 +104,7 @@ const Amenities = ({ setIsOpen }) => {
                     aspectRatio: '4/3',
                     borderRadius: '4px',
                     overflow: 'hidden',
+                    cursor: 'pointer',
                   }}
                 >
                   <Image
@@ -229,6 +233,16 @@ const Amenities = ({ setIsOpen }) => {
         </div>
 
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={amenityImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex(Math.max(0, lightboxIndex - 1))}
+          onNext={() => setLightboxIndex(Math.min(amenityImages.length - 1, lightboxIndex + 1))}
+        />
+      )}
     </section>
   )
 }

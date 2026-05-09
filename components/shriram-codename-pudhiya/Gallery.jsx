@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { galleryImages } from '../../lib/shriram-codename-pudhiya/images'
+import Lightbox from './Lightbox'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const RED = '#EB2027'
@@ -10,6 +11,7 @@ const Gallery = ({ setIsOpen }) => {
   const [pos, setPos] = useState(0)
   const [sliding, setSliding] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -84,6 +86,7 @@ const Gallery = ({ setIsOpen }) => {
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
+                  onClick={() => setLightboxIndex(idx)}
                   style={{
                     flexShrink: 0,
                     width: `calc((100% - ${(visible - 1) * 12}px) / ${visible})`,
@@ -92,6 +95,7 @@ const Gallery = ({ setIsOpen }) => {
                     borderRadius: '6px',
                     overflow: 'hidden',
                     boxShadow: '0 3px 12px rgba(0,0,0,0.1)',
+                    cursor: 'pointer',
                   }}
                 >
                   <Image
@@ -153,6 +157,16 @@ const Gallery = ({ setIsOpen }) => {
         </div>
 
       </div>
+
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={galleryImages}
+          currentIndex={lightboxIndex}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex(Math.max(0, lightboxIndex - 1))}
+          onNext={() => setLightboxIndex(Math.min(galleryImages.length - 1, lightboxIndex + 1))}
+        />
+      )}
     </section>
   )
 }

@@ -17,115 +17,119 @@ export default function Hero({ setIsOpen }) {
   return (
     <div style={{ marginTop: '68px', position: 'relative', width: '100%' }}>
 
-      {/* ── Full-width hero image ── */}
-      <div className="relative w-full h-[300px] md:h-[calc(100vh-68px)] md:min-h-[520px]">
+      {/* ═══ DESKTOP HERO (md+) — completely untouched ═══ */}
+      <div className="hidden md:block relative w-full" style={{ height: 'calc(100vh - 68px)', minHeight: '520px' }}>
+        <Image
+          src={heroImages.banner}
+          alt="Shriram Codename Pudhiya"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 z-[1]" style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 55%, rgba(0,0,0,0.05) 100%)',
+        }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[45%] z-[1] pointer-events-none" style={{
+          background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%)',
+        }} />
 
-        {/* Desktop Image */}
-        <div className="hidden md:block absolute inset-0">
-          <Image
-            src={heroImages.banner}
-            alt="Shriram Codename Pudhiya"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          {/* Dark gradient overlay */}
-          <div className="absolute inset-0 z-[1]" style={{
-            background: 'linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 55%, rgba(0,0,0,0.05) 100%)',
-          }} />
-          {/* Bottom extra darkening for text area */}
-          <div className="absolute bottom-0 left-0 right-0 h-[45%] z-[1] pointer-events-none" style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%)',
-          }} />
-        </div>
+        {/* Desktop text overlay */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 2 }}>
+          <div className="container mx-auto px-10" style={{ paddingBottom: '28px' }}>
+            <h1 style={{
+              fontFamily: F_JOST, fontSize: 'clamp(26px, 3.5vw, 50px)', fontWeight: '800',
+              color: '#ffffff', margin: '0 0 6px', lineHeight: 1.1,
+              letterSpacing: '-0.01em', textShadow: '0 2px 8px rgba(0,0,0,0.4)',
+            }}>Shriram Codename Pudhiya</h1>
 
-        {/* Mobile Image */}
-        <div className="block md:hidden absolute inset-0">
-           <Image
-            src={heroImages.mobile}
-            alt="Shriram Codename Pudhiya"
-            fill
-            priority
-            className="object-cover object-[center_30%]"
-            sizes="100vw"
-          />
-           <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-            background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.8) 100%)',
-          }} />
-        </div>
-
-        {/* ── Text content overlay ── */}
-        <div className="absolute bottom-0 left-0 right-0 z-[2] p-0">
-          {/* Main text block */}
-          <div className="container mx-auto px-4 md:px-10 pb-[60px] md:pb-[28px]">
-
-            {/* Project name */}
-            <h1 className="text-[clamp(26px,3.5vw,50px)] font-extrabold text-white mb-[6px] leading-[1.1] tracking-[-0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" style={{
-              fontFamily: F_JOST,
-            }}>
-              Shriram Codename Pudhiya
-            </h1>
-
-            {/* Location */}
-            <div className="flex items-center gap-[6px] mb-[10px] md:mb-[14px]">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '14px' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                 stroke="rgba(255,255,255,0.85)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
               </svg>
-              <span className="text-[14px] font-medium text-white/85" style={{
-                fontFamily: F_SANS,
-              }}>
+              <span style={{ fontFamily: F_SANS, fontSize: '14px', fontWeight: '500', color: 'rgba(255,255,255,0.85)' }}>
                 Thirumazhisai, Chennai
               </span>
             </div>
 
-            {/* Subtitle */}
-            <h2 className="text-[clamp(14px,1.6vw,20px)] font-bold text-white mb-[8px] md:mb-[12px]" style={{
-              fontFamily: F_JOST,
-            }}>
-              Luxurious 1, 2 and 3 BHK Apartments
-            </h2>
+            <h2 style={{
+              fontFamily: F_JOST, fontSize: 'clamp(14px, 1.6vw, 20px)', fontWeight: '700',
+              color: '#ffffff', margin: '0 0 12px',
+            }}>Luxurious 1, 2 and 3 BHK Apartments</h2>
 
-             {/* Price — directly on hero image, no separate strip */}
-             <div className="mb-[10px] md:mb-[18px]">
-              <p className="text-[12px] font-medium text-white/70 m-0 mb-[2px]" style={{
-                fontFamily: F_SANS,
-              }}>
-                Starts at
-              </p>
-              <p className="text-[clamp(26px,3vw,36px)] font-bold m-0 leading-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" style={{
-                fontFamily: F_JOST, color: RED,
-              }}>
-                32 Lakhs*
-              </p>
-            </div>
-
-            {/* Highlights */}
-            <div className="hidden md:flex flex-col gap-[5px] mb-[18px]">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', marginBottom: '18px' }}>
               {highlights.map((item, i) => (
-                <div key={i} className="flex items-center gap-[8px]">
-                  <span className="text-[13px] font-normal text-white/90" style={{
-                    fontFamily: F_SANS,
-                  }}>
-                    <span className="font-bold mr-[4px]">&raquo;</span>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontFamily: F_SANS, fontSize: '13px', color: 'rgba(255,255,255,0.88)', fontWeight: '400' }}>
+                    <span style={{ fontWeight: '700', marginRight: '4px' }}>&raquo;</span>
                     {item}
                   </span>
                 </div>
               ))}
             </div>
+
+            <div style={{ marginBottom: '4px' }}>
+              <p style={{ fontFamily: F_SANS, fontSize: '12px', fontWeight: '500', color: 'rgba(255,255,255,0.70)', margin: '0 0 2px' }}>Starts at</p>
+              <p style={{ fontFamily: F_JOST, fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: '700', color: RED, margin: 0, lineHeight: 1, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>32 Lakhs*</p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Highlights (Below Hero Image) */}
-      <div className="flex md:hidden flex-col gap-[8px] px-4 py-5" style={{ backgroundColor: RED }}>
+      {/* ═══ MOBILE HERO (<md) ═══ */}
+      <div className="block md:hidden relative w-full overflow-hidden" style={{ maxHeight: '300px' }}>
+        <Image
+          src={heroImages.mobile}
+          alt="Shriram Codename Pudhiya"
+          width={800}
+          height={600}
+          priority
+          className="w-full h-auto block"
+          sizes="100vw"
+        />
+        {/* Gradient: keep top clear for buildings, darken bottom half for text */}
+        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.85) 100%)',
+        }} />
+
+        {/* Mobile text — positioned at bottom of image */}
+        <div className="absolute inset-0 z-[2] flex flex-col justify-end" style={{ padding: '0 16px 20px' }}>
+
+          <h1 style={{
+            fontFamily: F_JOST, fontSize: '24px', fontWeight: '800',
+            color: '#fff', margin: '0 0 4px', lineHeight: 1.15,
+            textShadow: '0 2px 6px rgba(0,0,0,0.5)',
+          }}>Shriram Codename Pudhiya</h1>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '6px' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+              stroke="rgba(255,255,255,0.85)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+            </svg>
+            <span style={{ fontFamily: F_SANS, fontSize: '13px', fontWeight: '500', color: 'rgba(255,255,255,0.85)' }}>
+              Thirumazhisai, Chennai
+            </span>
+          </div>
+
+          <h2 style={{
+            fontFamily: F_JOST, fontSize: '14px', fontWeight: '700',
+            color: '#fff', margin: '0 0 6px',
+          }}>Luxurious 1, 2 and 3 BHK Apartments</h2>
+
+          <div style={{ marginBottom: '0' }}>
+            <p style={{ fontFamily: F_SANS, fontSize: '11px', fontWeight: '500', color: 'rgba(255,255,255,0.70)', margin: '0 0 1px' }}>Starts at</p>
+            <p style={{ fontFamily: F_JOST, fontSize: '28px', fontWeight: '700', color: RED, margin: 0, lineHeight: 1, textShadow: '0 2px 6px rgba(0,0,0,0.5)' }}>32 Lakhs*</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Highlights — red strip below hero */}
+      <div className="flex md:hidden flex-col gap-[8px] px-4 py-4" style={{ backgroundColor: RED }}>
         {highlights.map((item, i) => (
-          <div key={i} className="flex items-start gap-[8px]">
-            <span className="text-[13px] font-normal text-white" style={{
-              fontFamily: F_SANS,
-            }}>
-              <span className="font-bold mr-[4px]">&raquo;</span>
+          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px' }}>
+            <span style={{ fontFamily: F_SANS, fontSize: '13px', fontWeight: '400', color: '#fff' }}>
+              <span style={{ fontWeight: '700', marginRight: '4px' }}>&raquo;</span>
               {item}
             </span>
           </div>

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { amenityImages } from '../../lib/shriram-codename-pudhiya/images'
 
@@ -7,13 +7,20 @@ const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const F_SANS = 'var(--font-sans), Open Sans, sans-serif'
 const RED = '#EB2027'
 
-const VISIBLE = 3
-const TOTAL = amenityImages.length                        // 8
-const POSITIONS = TOTAL - VISIBLE + 1                    // 6  (slide-by-1)
-
 const Amenities = ({ setIsOpen }) => {
   const [pos, setPos]       = useState(0)
   const [sliding, setSliding] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  const visible = isMobile ? 1 : 3
+  const totalPositions = amenityImages.length - visible + 1
 
   const goTo = (next) => {
     if (sliding) return
@@ -23,7 +30,12 @@ const Amenities = ({ setIsOpen }) => {
   }
 
   const prev = () => pos > 0 && goTo(pos - 1)
-  const next = () => pos < POSITIONS - 1 && goTo(pos + 1)
+  const next = () => pos < totalPositions - 1 && goTo(pos + 1)
+
+  // Reset position when switching between mobile/desktop
+  useEffect(() => {
+    if (pos >= totalPositions) setPos(Math.max(0, totalPositions - 1))
+  }, [isMobile, pos, totalPositions])
 
   return (
     <section
@@ -72,7 +84,7 @@ const Amenities = ({ setIsOpen }) => {
               style={{
                 display: 'flex',
                 gap: '12px',
-                transform: `translateX(calc(-${pos} * (100% / ${VISIBLE} + 4px)))`,
+                transform: `translateX(calc(-${pos} * ((100% - ${(visible - 1) * 12}px) / ${visible} + 12px)))`,
                 transition: sliding
                   ? 'transform 0.48s cubic-bezier(0.4, 0, 0.2, 1)'
                   : 'none',
@@ -84,7 +96,7 @@ const Amenities = ({ setIsOpen }) => {
                   key={idx}
                   style={{
                     flexShrink: 0,
-                    width: `calc((100% - ${(VISIBLE - 1) * 12}px) / ${VISIBLE})`,
+                    width: `calc((100% - ${(visible - 1) * 12}px) / ${visible})`,
                     position: 'relative',
                     aspectRatio: '4/3',
                     borderRadius: '4px',
@@ -96,7 +108,7 @@ const Amenities = ({ setIsOpen }) => {
                     alt={item.label}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes={isMobile ? '100vw' : '33vw'}
                   />
 
                   {/* Red gradient → solid label bar */}
@@ -156,8 +168,8 @@ const Amenities = ({ setIsOpen }) => {
               border: 'none',
               color: '#fff',
               fontSize: '20px',
-              cursor: pos >= POSITIONS - 1 ? 'default' : 'pointer',
-              opacity: pos >= POSITIONS - 1 ? 0.45 : 1,
+              cursor: pos >= totalPositions - 1 ? 'default' : 'pointer',
+              opacity: pos >= totalPositions - 1 ? 0.45 : 1,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               transition: 'opacity 0.2s',
               borderRadius: '2px',
@@ -171,7 +183,7 @@ const Amenities = ({ setIsOpen }) => {
         <div style={{
           display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '18px',
         }}>
-          {Array.from({ length: POSITIONS }).map((_, i) => (
+          {Array.from({ length: totalPositions }).map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}

@@ -1,17 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { galleryImages } from '../../lib/shriram-codename-pudhiya/images'
 
 const F_JOST = 'var(--font-jost), Montserrat, sans-serif'
 const RED = '#EB2027'
 
-const VISIBLE = 3
-const TOTAL_POSITIONS = galleryImages.length - VISIBLE + 1  // 4
-
 const Gallery = ({ setIsOpen }) => {
   const [pos, setPos] = useState(0)
   const [sliding, setSliding] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  const visible = isMobile ? 1 : 3
+  const totalPositions = galleryImages.length - visible + 1
 
   const goTo = (next) => {
     if (sliding) return
@@ -21,7 +29,12 @@ const Gallery = ({ setIsOpen }) => {
   }
 
   const prev = () => pos > 0 && goTo(pos - 1)
-  const next = () => pos < TOTAL_POSITIONS - 1 && goTo(pos + 1)
+  const next = () => pos < totalPositions - 1 && goTo(pos + 1)
+
+  // Reset position when switching between mobile/desktop
+  useEffect(() => {
+    if (pos >= totalPositions) setPos(Math.max(0, totalPositions - 1))
+  }, [isMobile, pos, totalPositions])
 
   return (
     <section id="gallery" style={{ padding: '64px 0', background: '#ffffff', borderBottom: '1px solid #f0f0f0' }}>
@@ -63,8 +76,7 @@ const Gallery = ({ setIsOpen }) => {
               style={{
                 display: 'flex',
                 gap: '12px',
-                /* shift by (imageWidth + gap) * pos  ≈ one-third of container per step */
-                transform: `translateX(calc(-${pos} * (100% / ${VISIBLE} + 4px)))`,
+                transform: `translateX(calc(-${pos} * ((100% - ${(visible - 1) * 12}px) / ${visible} + 12px)))`,
                 transition: sliding ? 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
                 willChange: 'transform',
               }}
@@ -74,7 +86,7 @@ const Gallery = ({ setIsOpen }) => {
                   key={idx}
                   style={{
                     flexShrink: 0,
-                    width: `calc((100% - ${(VISIBLE - 1) * 12}px) / ${VISIBLE})`,
+                    width: `calc((100% - ${(visible - 1) * 12}px) / ${visible})`,
                     position: 'relative',
                     aspectRatio: '4/3',
                     borderRadius: '6px',
@@ -87,7 +99,7 @@ const Gallery = ({ setIsOpen }) => {
                     alt={img.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes={isMobile ? '100vw' : '33vw'}
                   />
                 </div>
               ))}
@@ -101,9 +113,9 @@ const Gallery = ({ setIsOpen }) => {
               position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)',
               zIndex: 10,
               width: '38px', height: '38px', borderRadius: '50%',
-              background: pos >= TOTAL_POSITIONS - 1 ? 'rgba(235,32,39,0.35)' : RED,
+              background: pos >= totalPositions - 1 ? 'rgba(235,32,39,0.35)' : RED,
               border: 'none', color: '#fff', fontSize: '22px',
-              cursor: pos >= TOTAL_POSITIONS - 1 ? 'default' : 'pointer',
+              cursor: pos >= totalPositions - 1 ? 'default' : 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
               transition: 'background 0.2s',
@@ -115,7 +127,7 @@ const Gallery = ({ setIsOpen }) => {
 
         {/* Dots */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '20px' }}>
-          {Array.from({ length: TOTAL_POSITIONS }).map((_, i) => (
+          {Array.from({ length: totalPositions }).map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
